@@ -2,7 +2,6 @@
     :codeauthor: Joao Mesquita <jmesquita@sangoma.com>
 """
 
-# Import Python libs
 
 import datetime
 import os
@@ -11,8 +10,6 @@ import time
 import salt.utils.files
 from salt import fileserver
 from tests.support.helpers import with_tempdir
-
-# Import Salt Testing libs
 from tests.support.mixins import LoaderModuleMockMixin
 from tests.support.unit import TestCase
 

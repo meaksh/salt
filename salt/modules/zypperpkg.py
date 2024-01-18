@@ -1967,8 +1967,8 @@ def upgrade(
     """
     if novendorchange is not None:
         salt.utils.versions.warn_until(
-            "Phosphorus",
-            "'novendorchange' OPTION is deprecated in favor of 'allowvendorchange'."
+            3009,
+            "'novendorchange' OPTION is deprecated in favor of 'allowvendorchange'.",
         )
     else:
         novendorchange = not allowvendorchange

@@ -1,0 +1,19 @@
+main_workflow:
+  steps:
+    - branch_package:
+        source_project: home:PSuarezHernandez:tests
+        source_package: salt
+        target_project: home:PSuarezHernandez:tests:CI
+  filters:
+    event: pull_request
+
+rebuild_master:
+  steps:
+    - rebuild_package:
+        project: home:PSuarezHernandez:tests
+        package: salt
+  filters:
+    event: push
+  branches:
+    only:
+      - main

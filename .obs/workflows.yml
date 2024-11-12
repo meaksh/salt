@@ -16,4 +16,4 @@ rebuild_master:
     event: push
   branches:
     only:
-      - main
+      - openSUSE/devel/master

@@ -551,7 +551,7 @@ mv build _build.python311
 # extract docs from the tarball
 mkdir -p doc/_build
 pushd doc/_build/
-tar xfv pkg/suse/html.tar.bz2
+tar xfv ../../pkg/suse/html.tar.bz2
 popd
 %endif
 

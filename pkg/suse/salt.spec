@@ -55,12 +55,6 @@ License:        Apache-2.0
 Group:          System/Management
 Url:            https://saltproject.io/
 Source:         salt-%{version}.tar.gz
-Source1:        README.SUSE
-Source2:        salt-tmpfiles.d
-Source3:        html.tar.bz2
-Source4:        update-documentation.sh
-Source5:        travis.yml
-Source6:        transactional_update.conf
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:  logrotate
@@ -540,10 +534,6 @@ Collection of unit, functional, and integration tests for %{name}.
 
 %prep
 %setup -q -n salt-%{version}
-cp %{S:1} .
-cp %{S:5} ./.travis.yml
-cp %{S:6} .
-%autopatch -p1
 
 %build
 %if "%{flavor}" != "testsuite"
@@ -561,7 +551,7 @@ mv build _build.python311
 # extract docs from the tarball
 mkdir -p doc/_build
 pushd doc/_build/
-tar xfv %{S:3}
+tar xfv pkg/suse/html.tar.bz2
 popd
 %endif
 
@@ -678,7 +668,7 @@ ln -s service %{buildroot}%{_sbindir}/rcsalt-master
 ln -s service %{buildroot}%{_sbindir}/rcsalt-syndic
 ln -s service %{buildroot}%{_sbindir}/rcsalt-minion
 ln -s service %{buildroot}%{_sbindir}/rcsalt-api
-install -Dpm 644 %{S:2}                   %{buildroot}/usr/lib/tmpfiles.d/salt.conf
+install -Dpm 644 pkg/suse/salt-tmpfiles.d                   %{buildroot}/usr/lib/tmpfiles.d/salt.conf
 %else
 mkdir -p %{buildroot}%{_initddir}
 ## install init scripts
@@ -706,7 +696,7 @@ install -Dpm 0640 conf/roster %{buildroot}%{_sysconfdir}/salt/roster
 install -Dpm 0640 conf/cloud %{buildroot}%{_sysconfdir}/salt/cloud
 install -Dpm 0640 conf/cloud.profiles %{buildroot}%{_sysconfdir}/salt/cloud.profiles
 install -Dpm 0640 conf/cloud.providers %{buildroot}%{_sysconfdir}/salt/cloud.providers
-install -Dpm 0640 transactional_update.conf %{buildroot}%{_sysconfdir}/salt/minion.d/transactional_update.conf
+install -Dpm 0640 pkg/suse/transactional_update.conf %{buildroot}%{_sysconfdir}/salt/minion.d/transactional_update.conf
 #
 ## install logrotate file (for RHEL6 we use without sudo)
 %if 0%{?rhel} > 6 || 0%{?suse_version}
@@ -1196,7 +1186,7 @@ rm -f %{_localstatedir}/cache/salt/minion/thin/version
 %config(noreplace) %{_sysconfdir}/logrotate.d/salt
 %{!?_licensedir:%global license %doc}
 %license LICENSE
-%doc AUTHORS README.rst README.SUSE
+%doc AUTHORS README.rst pkg/suse/README.SUSE
 #
 %dir        %attr(0750, root, salt) %{_sysconfdir}/salt
 %dir        %attr(0750, root, salt) %{_sysconfdir}/salt/pki

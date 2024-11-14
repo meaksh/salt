@@ -10,10 +10,10 @@ main_workflow:
 rebuild_master:
   steps:
     - trigger_services:
-      project: home:PSuarezHernandez:tests:github
-      package: salt
+        project: home:PSuarezHernandez:tests:github
+        package: salt
   filters:
     event: push
-  branches:
-    only:
-      - openSUSE/devel/master
+    branches:
+      only:
+        - openSUSE/devel/master

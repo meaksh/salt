@@ -1,4 +1,6 @@
 #
+# TEST CHANGES TO SPEC FILE
+#
 # spec file for package salt
 #
 # Copyright (c) 2024 SUSE LLC
@@ -14,6 +16,7 @@
 
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
+
 %global debug_package %{nil}
 
 %global flavor @BUILD_FLAVOR@%{nil}
@@ -1256,5 +1259,3 @@ rm -f %{_localstatedir}/cache/salt/minion/thin/version
 %endif
 
 %changelog
-
-

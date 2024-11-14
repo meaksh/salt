@@ -3,7 +3,7 @@ main_workflow:
     - branch_package:
         source_project: home:PSuarezHernandez:tests:github
         source_package: salt
-        target_project: home:PSuarezHernandez:tests:CI
+        target_project: home:PSuarezHernandez:tests:github:CI
   filters:
     event: pull_request
 

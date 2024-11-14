@@ -1,7 +1,7 @@
 main_workflow:
   steps:
     - branch_package:
-        source_project: home:PSuarezHernandez:tests
+        source_project: home:PSuarezHernandez:tests:github
         source_package: salt
         target_project: home:PSuarezHernandez:tests:CI
   filters:
@@ -10,8 +10,8 @@ main_workflow:
 rebuild_master:
   steps:
     - rebuild_package:
-        project: home:PSuarezHernandez:tests
-        package: salt
+      project: home:PSuarezHernandez:tests:github
+      package: salt
   filters:
     event: push
   branches:

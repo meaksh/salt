@@ -1,6 +1,8 @@
 #
 # TEST CHANGES TO SPEC FILE
 #
+#
+#
 # spec file for package salt
 #
 # Copyright (c) 2024 SUSE LLC

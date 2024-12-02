@@ -1,8 +1,6 @@
 #
 # spec file for package salt
 #
-# MORE CHANGES HERE
-#
 # Copyright (c) 2024 SUSE LLC
 #
 # All modifications and additions to the file contributed by third parties

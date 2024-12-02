@@ -1,6 +1,8 @@
 """
 A module for shelling out.
 
+EXAMPLE TEXT
+
 Keep in mind that this module is insecure, in that it can give whomever has
 access to the master root execution access to all salt minions.
 """

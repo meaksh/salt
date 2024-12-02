@@ -2,7 +2,7 @@ main_workflow:
   steps:
     - branch_package:
         source_project: home:PSuarezHernandez:tests:github
-        source_package: salt
+        source_package: fake-package
         target_project: home:PSuarezHernandez:tests:github:CI
   filters:
     event: pull_request
@@ -11,9 +11,9 @@ rebuild_master:
   steps:
     - trigger_services:
         project: home:PSuarezHernandez:tests:github
-        package: salt
+        package: fake-package
   filters:
     event: push
     branches:
       only:
-        - openSUSE/devel/master
+        - openSUSE/devel/master-version-2

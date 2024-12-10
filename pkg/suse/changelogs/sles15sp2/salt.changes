@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Mon Dec  2 16:22:27 UTC 2024 - Pablo Suárez Hernández <psuarezhernandez@suse.com>
+
+- Remove unnecessary comments from spec and cmd module
+
+-------------------------------------------------------------------
 Wed Oct  2 11:31:01 UTC 2024 - Yeray Gutiérrez Cedrés <yeray.gutierrez@suse.com>
 
 - Fix failing x509 tests with OpenSSL < 1.1
@@ -6308,4 +6313,3 @@ Tue Jan 22 17:53:39 UTC 2013 - aboe76@gmail.com
 Wed Jan 16 06:38:40 UTC 2013 - aboe76@gmail.com
 
 - uploaded to salt 1.12.0
-

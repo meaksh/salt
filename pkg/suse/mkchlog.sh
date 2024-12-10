@@ -9,7 +9,7 @@ echo >> _temp.changes
 echo "$(cat _temp.changes salt.changes)" > salt.changes
 git add salt.changes
 
-for i in $(ls changelogs/*changes); do
+for i in $(ls changelogs/*/salt.changes); do
     echo "$(cat _temp.changes $i)" > $i
     git add $i
 done
